@@ -15,9 +15,14 @@ function App() {
             <Moods name='Hopeful' />
             <Moods name='Nostalgic' />
             <Moods name='Energetic' />
+            <Moods name='Introspective' />
+            <Moods name='Angry' />
+            <Moods name='Romantic' />
           </div>
         </div>
-
+        <div className="btn">
+          <button>Submit</button>
+        </div>
         <div className="generator">
           <Songs songName='Gravity' artistName='John Mayer'/>
         </div>
