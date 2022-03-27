@@ -11,6 +11,7 @@
 }
 
 #header {
+  padding-top: .5em;
   text-align: center;
 }
 
@@ -25,4 +26,15 @@
   display: grid; 
   grid-template-columns: repeat(3, 1fr); 
   gap: 2em;
+  border: 1px solid black;
+  padding: 2em 2em;
+  border-radius: 100px;
+  background-color: rgba(2.4, 23.9, 29.8, 0.5);
+  color: #fff; 
+  box-shadow: 2px 5px 9px 1px #302f2f;
 }
+
+.mood-selector {
+  padding-left: 1.5em;
+}
+
