@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Moods from './moods'; 
+import Songs from './songs'; 
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
             <Moods name='Nostalgic' />
             <Moods name='Energetic' />
           </div>
+        </div>
+
+        <div className="generator">
+          <Songs songName='Gravity' artistName='John Mayer'/>
         </div>
     </div>
   );
