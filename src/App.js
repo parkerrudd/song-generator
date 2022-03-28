@@ -25,10 +25,10 @@ function App() {
           </div>
         </div>
         <div className="btn">
-          <button onClick={() => setSongDisplay(!songDisplay)}>Submit</button>
+          <button onClick={() => setSongDisplay(!songDisplay)}>Find Your Song</button>
         </div>
-        <div className="generator" id=''>
-          { songDisplay && <Songs/>}
+        <div className="generator">
+          { songDisplay ? <Songs/> : <Songs /> }
         </div>
     </div>
   );
