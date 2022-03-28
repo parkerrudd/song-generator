@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Moods from './moods'; 
 import Songs from './songs'; 
@@ -24,7 +24,7 @@ function App() {
         <div className="btn">
           <button>Submit</button>
         </div>
-        <div className="generator">
+        <div className="generator" id=''>
           <Songs songName='Gravity' artistName='John Mayer'/>
         </div>
     </div>
