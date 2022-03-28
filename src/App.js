@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, useState }from 'react';
 import './App.css';
 import Moods from './moods'; 
 import Songs from './songs'; 
-import Generator from './generator'; 
+import songGeneration from './generator'; 
 
 function App() {
+
+  const [songDisplay, setSongDisplay] = useState(false); 
+
   return (
     <div className="App">
       <h1 id='header'>How Are You Feeling?</h1>
@@ -22,10 +25,10 @@ function App() {
           </div>
         </div>
         <div className="btn">
-          <button>Submit</button>
+          <button onClick={() => setSongDisplay(!songDisplay)}>Submit</button>
         </div>
         <div className="generator" id=''>
-          <Songs songName='Gravity' artistName='John Mayer'/>
+          { songDisplay && <Songs/>}
         </div>
     </div>
   );

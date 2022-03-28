@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import continuumArt from "./images/continuum-artwork.jpeg"; 
 
-    class SongGenerator extends Component {
-        constructor(props) {
-            super(props)
-            this.songGeneration = this.songGeneration.bind(this)
-        }
-        songGeneration() {
+     function songGeneration() {
             const songList = [
               {songName: 'Gravity', 
               artistName: 'John Mayer', 
@@ -40,25 +35,16 @@ import continuumArt from "./images/continuum-artwork.jpeg";
               Chill: true, 
               Happy: true}       
               ]
-                  const songListFiltered = songList.filter(item => item.Happy === true) 
-                  const songDisplayed = songListFiltered[Math.floor(Math.random() * songListFiltered.length)]
-                  return songDisplayed; 
-              }
-            render() {
-                return (
-                <div class="container">
-                    <button onClick={this.songGeneration}></button>
+            const songListFiltered = songList.filter(item => item.Happy === true) 
+            const songDisplayed = songListFiltered[Math.floor(Math.random() * songListFiltered.length)]
+            return (
                     <div className="song-box">
                         <img src={continuumArt} alt="album artwork" />
-                        <h3>{this.songDisplayed.songName}</h3>
-                        <p>{this.songDisplayed.artistName}</p>
+                        <h3>{songDisplayed.songName}</h3>
+                        <p>{songDisplayed.artistName}</p>
                     </div>
-                </div>
-            )}; 
-    }
+            ); 
+        }
 
 
-ReactDOM.render(
-    <SongGenerator />, 
-    document.getElementById('generation')
-)
+export default songGeneration; 
