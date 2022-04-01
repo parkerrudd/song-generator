@@ -9,13 +9,8 @@ import atLeastImPrettyArt from './images/at-least-im-pretty-artwork.jpg';
 import summerHighlandFallsArt from './images/summer-highland-falls-art.jpg';
  
 
-function Songs({clicked}) {
-    // const data = JSON.parse(localStorage.getItem('data') || '[]')
-    // console.log(data)
-//   var fs = require('fs'); 
-//   var data = fs.readFileSync('checkedBoxes.json')  
-//   var words = JSON.parse(data)
-//   console.log(words); 
+function Songs(props) {
+  
   const songList = [
         {songName: 'Gravity', 
         artistName: 'John Mayer', 
