@@ -1,16 +1,21 @@
 import React from "react";
 import './App.css';
-import Moods from "./moods";
+import {Moods, checkedBoxes} from "./moods";
 import continuumArt from "./images/continuum-artwork.jpeg"; 
 import cowboyInLAArt from './images/Cowboy in LA-artwork.jpg'; 
 import goldenHour from './images/goldenHour-artwork.jpg'; 
 import circlesArt from './images/circles-artwork.jpg';
 import atLeastImPrettyArt from './images/at-least-im-pretty-artwork.jpg';
-import summerHighlandFallsArt from './images/summer-highland-falls-art.jpg';  
+import summerHighlandFallsArt from './images/summer-highland-falls-art.jpg';
+ 
 
-const selected = document.querySelectorAll('input[type="checkbox"]:checked'); 
-
-function Songs() {
+function Songs({clicked}) {
+    // const data = JSON.parse(localStorage.getItem('data') || '[]')
+    // console.log(data)
+//   var fs = require('fs'); 
+//   var data = fs.readFileSync('checkedBoxes.json')  
+//   var words = JSON.parse(data)
+//   console.log(words); 
   const songList = [
         {songName: 'Gravity', 
         artistName: 'John Mayer', 
@@ -50,6 +55,8 @@ function Songs() {
         Chill: true, 
         Happy: true}       
         ] 
+
+
     const songListFiltered = songList.filter(item => item.Happy === true) 
     const songDisplayed = songListFiltered[Math.floor(Math.random() * songListFiltered.length)] 
     return (

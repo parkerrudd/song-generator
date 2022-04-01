@@ -7,7 +7,11 @@ import songGeneration from './generator';
 function App() {
 
   const [songDisplay, setSongDisplay] = useState(false); 
+  const [selectedValue, setSelectedValue] = useState('')
 
+  const clicked = () => {
+    setSelectedValue('Sad')
+  }
   return (
     <div className="App">
       <h1 id='header'>How Are You Feeling?</h1>
@@ -17,6 +21,7 @@ function App() {
             <Moods name='Sad' />
             <Moods name='Chill' />
             <Moods name='Hopeful' />
+            <button onClick={() => clicked()}>Sad</button>
             <Moods name='Nostalgic' />
             <Moods name='Energetic' />
             <Moods name='Introspective' />
@@ -28,7 +33,7 @@ function App() {
           <button onClick={() => setSongDisplay(!songDisplay)}>Find Your Song</button>
         </div>
         <div className="generator">
-          { songDisplay ? <Songs/> : <Songs /> }
+          { songDisplay ? <Songs clicked={selectedValue}/> : <Songs clicked={selectedValue}/> }
         </div>
     </div>
   );

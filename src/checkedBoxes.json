@@ -1,0 +1,5 @@
+{
+    "Moods": ["Sad", "Happy", "Introspective"], 
+    "javascript.suggestionActions.enabled": false
+
+}
