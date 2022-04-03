@@ -2,49 +2,85 @@
     {
         "songName": "Gravity", 
         "artistName": "John Mayer", 
-        "artwork": "images/continuum-artowkr.jpg", 
+        "artwork": "images/continuum-artwork.jpeg", 
+        "Happy":false,
+        "Sad":false,
         "Chill": true, 
-        "Introspective": true}, 
+        "Hopeful":false,
+        "Nostalgic":false,
+        "Energetic":false,
+        "Introspective": true,
+        "Angry":false,
+        "Romantic":false
+    }, 
     {
         "songName": "Happy and Sad", 
         "artistName": "Kacey Musgraves", 
         "artwork": "images/goldenHour-artwork.jpg",
         "Happy": true, 
         "Sad": true, 
+        "Chill":true,
+        "Hopeful":false,
         "Nostalgic": true, 
-        "Introspective": true
+        "Energetic":false,
+        "Introspective": true,
+        "Angry":false,
+        "Romantic":false
     }, 
     {
         "songName": "Circles", 
         "artistName": "Mac Miller", 
-        "artwork": "images/circles-artwork.jpeg",
+        "artwork": "images/circles-artwork.jpg",
+        "Happy":false,
         "Sad": true, 
         "Chill": true, 
+        "Hopeful":false,
+        "Nostalgic": true,
+        "Energetic":false,
         "Introspective": true, 
-        "Nostalgic": true
+        "Angry":false,
+        "Romantic":false
     }, 
     {
         "songName": "At Least I'm Pretty", 
         "artistName": "Harriette", 
         "artwork": "images/at-least-im-pretty-artwork.jpg",
         "Happy": true, 
+        "Sad":false,
         "Chill": true, 
-        "Introspective": true
+        "Hopeful":false,
+        "Nostalgic":true,
+        "Energetic":false,
+        "Introspective": true,
+        "Angry":false,
+        "Romantic":false
     }, 
     {
         "songName": "Summer, Highland Falls", 
         "artistName": "Billy Joel", 
         "artwork": "images/summer-highland-falls-art.jpg",
-        "Energetic": true, 
+        "Happy":false,
+        "Sad":false,
+        "Chill":false,
         "Hopeful": true, 
-        "Introspective": true
+        "Nostalgic":true,
+        "Energetic": true, 
+        "Introspective": true,
+        "Angry":false,
+        "Romantic":false
     }, 
     {
         "songName": "Cowboy in LA", 
         "artistName": "LANY", 
         "artwork": "images/Cowboy in LA-artwork.jpg",
-        "Romantic": true, 
+        "Happy": true,
+        "Sad":false,
         "Chill": true, 
-        "Happy": true
+        "Hopeful":true,
+        "Nostalgic":true,
+        "Energetic":false,
+        "Introspective":false,
+        "Angry":false,
+        "Romantic": true
     }       
 ] 

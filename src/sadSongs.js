@@ -4,10 +4,9 @@ import SongData from './songData.json';
 
  
 
-function Songs({moodsArr}) {
-    const songListFiltered = SongData.filter(item => item.Happy === true) 
+function SadSongs() {
+    const songListFiltered = SongData.filter(item => item.Sad === true) 
     const songDisplayed = songListFiltered[Math.floor(Math.random() * songListFiltered.length)] 
-    
     return (
         <div className="song-box">
             <img src={songDisplayed.artwork} alt="album artwork" />
@@ -15,7 +14,6 @@ function Songs({moodsArr}) {
             <p>{songDisplayed.artistName}</p>
         </div>
     )
-    
 }
 
-export default Songs; 
+export default SadSongs; 
