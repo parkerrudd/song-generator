@@ -4,12 +4,16 @@ import Item from "./itemAdded";
 import Songs from "./songs";
 
 function Moods() {
-
-    const [isClicked, setIsClicked] = useState(false)
+    const [happyIsClicked, setHappyIsClicked] = useState(false)
     const [songDisplay, setSongDisplay] = useState(false); 
 
-    const buttonClick = () => {
-        setIsClicked(!isClicked)
+    const happyButtonClick = () => {
+        setHappyIsClicked(!happyIsClicked)
+    }
+    const [sadIsClicked, setSadIsClicked] = useState(false)
+
+    const sadButtonClick = () => {
+        setSadIsClicked(!sadIsClicked)
     }
 
 
@@ -17,10 +21,10 @@ function Moods() {
         <div className="big-container">
             <div className="container">
                 <div className="mood-selector">
-                    <button onClick={buttonClick} className={isClicked ? 'clicked' : "mood-btns"}  id="happy">Happy</button>
+                    <button onClick={happyButtonClick} className={happyIsClicked ? 'clicked' : "mood-btns"}  id="happy">Happy</button>
                 </div>
                 <div className="mood-selector">
-                    <button className="mood-btns" id="sad">Sad</button>
+                    <button onClick={sadButtonClick} className={sadIsClicked ? 'clicked' : "mood-btns"} id="sad">Sad</button>
                 </div>
                 <div className="mood-selector">
                     <button className="mood-btns" id="chill">Chill</button>
@@ -51,7 +55,7 @@ function Moods() {
     {/* isClicked ? <Item /> : '' */}
 
             <div className="generator">
-                { isClicked  /*&& songDisplay */? <Songs /> : ''}
+                { happyIsClicked  /*&& songDisplay */? <Songs /> : ''}
             </div>
         </div>
     )

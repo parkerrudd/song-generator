@@ -2,13 +2,13 @@
     {
         "songName": "Gravity", 
         "artistName": "John Mayer", 
-        "artwork": "continuumArt", 
+        "artwork": "images/continuum-artowkr.jpg", 
         "Chill": true, 
         "Introspective": true}, 
     {
         "songName": "Happy and Sad", 
         "artistName": "Kacey Musgraves", 
-        "artwork": "./images/goldenHour-artwork.jpg",
+        "artwork": "images/goldenHour-artwork.jpg",
         "Happy": true, 
         "Sad": true, 
         "Nostalgic": true, 
@@ -17,7 +17,7 @@
     {
         "songName": "Circles", 
         "artistName": "Mac Miller", 
-        "artwork": "circlesArt",
+        "artwork": "images/circles-artwork.jpeg",
         "Sad": true, 
         "Chill": true, 
         "Introspective": true, 
@@ -26,7 +26,7 @@
     {
         "songName": "At Least I'm Pretty", 
         "artistName": "Harriette", 
-        "artwork": "atLeastImPrettyArt",
+        "artwork": "images/at-least-im-pretty-artwork.jpg",
         "Happy": true, 
         "Chill": true, 
         "Introspective": true
@@ -34,7 +34,7 @@
     {
         "songName": "Summer, Highland Falls", 
         "artistName": "Billy Joel", 
-        "artwork": "summerHighlandFallsArt",
+        "artwork": "images/summer-highland-falls-art.jpg",
         "Energetic": true, 
         "Hopeful": true, 
         "Introspective": true
@@ -42,7 +42,7 @@
     {
         "songName": "Cowboy in LA", 
         "artistName": "LANY", 
-        "artwork": "cowboyInLAArt",
+        "artwork": "images/Cowboy in LA-artwork.jpg",
         "Romantic": true, 
         "Chill": true, 
         "Happy": true
