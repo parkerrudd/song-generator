@@ -2,9 +2,10 @@ import React from "react";
 import './App.css';
 import SongData from './songData.json'; 
 
-function Songs() {
-        
-    const songListFiltered = SongData.filter(item => item.Happy) 
+ 
+
+function HopefulSongs() {
+    const songListFiltered = SongData.filter(item => item.Hopeful === true) 
     const songDisplayed = songListFiltered[Math.floor(Math.random() * songListFiltered.length)] 
     
     return (
@@ -15,7 +16,6 @@ function Songs() {
         </div>
     )
     
-    
 }
 
-export default Songs; 
+export default HopefulSongs; 

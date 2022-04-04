@@ -2,9 +2,9 @@ import React from "react";
 import './App.css';
 import SongData from './songData.json'; 
 
-function Songs() {
+function NostalgicSongs() {
         
-    const songListFiltered = SongData.filter(item => item.Happy) 
+    const songListFiltered = SongData.filter(item => item.Nostalgic) 
     const songDisplayed = songListFiltered[Math.floor(Math.random() * songListFiltered.length)] 
     
     return (
@@ -18,4 +18,4 @@ function Songs() {
     
 }
 
-export default Songs; 
+export default NostalgicSongs; 

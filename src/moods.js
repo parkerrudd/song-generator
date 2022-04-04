@@ -1,24 +1,32 @@
 import React, { useState } from "react";
 import './App.css'; 
-import Item from "./itemAdded";
 import Songs from "./songs";
 import SadSongs from "./sadSongs";
 import ChillSongs from "./chillSongs";
+import HopefulSongs from "./hopefulSongs";
+import NostalgicSongs from './nostalgicSongs'; 
+import RomanticSongs from "./romanticSongs";
 
 function Moods() {
     //push every selected mood to this array, only allow max 3 moods to be selected, use arr in songs component to determine which to display
-    const moodsArr = []
+    let moodsArr = []
 
     const [happyIsClicked, setHappyIsClicked] = useState(false)
-    // const [songDisplay, setSongDisplay] = useState(false); 
+    const [songDisplay, setSongDisplay] = useState(false); 
 
     const happyButtonClick = () => {
         setHappyIsClicked(!happyIsClicked)
-        moodsArr.push("happy")
+        moodsArr.push("Happy") 
         if (sadIsClicked) {
             setSadIsClicked(!sadIsClicked)
         } if (chillIsClicked) {
             setChillIsClicked(!chillIsClicked)
+        } if (hopefulIsClicked) {   
+            setHopefulIsClicked(!hopefulIsClicked)
+        } if (nostalgicIsClicked) {
+            setNostalgicIsClicked(!nostalgicIsClicked)
+        } if (romanticIsClicked) {
+            setRomanticIsClicked(!romanticIsClicked)
         }
     }
     const [sadIsClicked, setSadIsClicked] = useState(false)
@@ -30,6 +38,12 @@ function Moods() {
             setHappyIsClicked(!happyIsClicked)
         } if (chillIsClicked) {
             setChillIsClicked(!chillIsClicked)
+        } if (hopefulIsClicked) {
+            setHopefulIsClicked(!hopefulIsClicked)
+        } if (nostalgicIsClicked) {
+            setNostalgicIsClicked(!nostalgicIsClicked)
+        } if (romanticIsClicked) {
+            setRomanticIsClicked(!romanticIsClicked)
         }
     }
 
@@ -42,6 +56,65 @@ function Moods() {
             setHappyIsClicked(!happyIsClicked)
         } if (sadIsClicked) {
             setSadIsClicked(!sadIsClicked)
+        } if (hopefulIsClicked) {
+            setHopefulIsClicked(!hopefulIsClicked)
+        } if (nostalgicIsClicked) {
+            setNostalgicIsClicked(!nostalgicIsClicked)
+        } if (romanticIsClicked) {
+            setRomanticIsClicked(!romanticIsClicked)
+        }
+
+    }
+
+    const [hopefulIsClicked, setHopefulIsClicked] = useState(false)
+
+    const hopefulButtonClick = () => {
+        setHopefulIsClicked(!hopefulIsClicked)
+        moodsArr.push("Chill")
+        if (happyIsClicked) {
+            setHappyIsClicked(!happyIsClicked)
+        } if (sadIsClicked) {
+            setSadIsClicked(!sadIsClicked)
+        } if (chillIsClicked) {
+            setChillIsClicked(!chillIsClicked)
+        } if (nostalgicIsClicked) {
+            setNostalgicIsClicked(!nostalgicIsClicked)
+        } if (romanticIsClicked) {
+            setRomanticIsClicked(!romanticIsClicked)
+        }
+
+    }
+
+    const [nostalgicIsClicked, setNostalgicIsClicked] = useState(false)
+
+    const nostalgicButtonClick = () => {
+        setNostalgicIsClicked(!nostalgicIsClicked)
+        moodsArr.push("Chill")
+        if (happyIsClicked) {
+            setHappyIsClicked(!happyIsClicked)
+        } if (sadIsClicked) {
+            setSadIsClicked(!sadIsClicked)
+        } if (chillIsClicked) {
+            setChillIsClicked(!chillIsClicked)
+        } if (romanticIsClicked) {
+            setRomanticIsClicked(!romanticIsClicked)
+        }
+
+    }
+
+    const [romanticIsClicked, setRomanticIsClicked] = useState(false)
+
+    const romanticButtonClick = () => {
+        setRomanticIsClicked(!romanticIsClicked)
+        moodsArr.push("Chill")
+        if (happyIsClicked) {
+            setHappyIsClicked(!happyIsClicked)
+        } if (sadIsClicked) {
+            setSadIsClicked(!sadIsClicked)
+        } if (chillIsClicked) {
+            setChillIsClicked(!chillIsClicked)
+        } if (romanticIsClicked) {
+            setRomanticIsClicked(!romanticIsClicked)
         }
 
     }
@@ -60,34 +133,35 @@ function Moods() {
                     <button onClick={chillButtonClick} className={chillIsClicked ? 'clicked' : "mood-btns"}  id="chill">Chill</button>
                 </div>
                 <div className="mood-selector">
-                    <button className="mood-btns" id="hopeful">Hopeful</button>
+                    <button onClick={hopefulButtonClick} className={hopefulIsClicked ? 'clicked' : "mood-btns"}  id="hopeful">Hopeful</button>
                 </div>
                 <div className="mood-selector">
-                    <button className="mood-btns" id="nostalgic">Nostalgic</button>
+                    <button onClick={nostalgicButtonClick} className={nostalgicIsClicked ? 'clicked' : "mood-btns"} id="nostalgic">Nostalgic</button>
                 </div>
-                <div className="mood-selector">
+                {/*<div className="mood-selector">
                     <button className="mood-btns" id="energetic">Energetic</button>
                 </div>
                 <div className="mood-selector">
                     <button className="mood-btns" id="introspective">Introspective</button>
-                </div>
-                <div className="mood-selector">
+                </div>}
+                {/*<div className="mood-selector">
                     <button className="mood-btns" id="angry">Angry</button>
-                </div>
+                 </div>*/}
                 <div className="mood-selector">
-                    <button className="mood-btns" id="romantic">Romantic</button>
+                    <button onClick={romanticButtonClick} className={romanticIsClicked ? 'clicked' : "mood-btns"} id="romantic">Romantic</button>
                 </div>
             </div>
-            <div className="btn">
-               { /* <button onClick={() => setSongDisplay(!songDisplay)}>Find Your Song</button> */}
-            </div>
-            
-    {/* isClicked ? <Item /> : '' */}
+           {/* <div className="btn">
+                <button onClick={() => setSongDisplay(!songDisplay)}>Find Your Song</button> 
+                </div>*/}
 
             <div className="generator">
-                { happyIsClicked  /*&& songDisplay */? <Songs moodsArr={moodsArr}/> : ''}
+                { happyIsClicked /* && songDisplay */ ? <Songs /> : ''}
                 { sadIsClicked  /*&& songDisplay */? <SadSongs /> : ''}
                 { chillIsClicked  /*&& songDisplay */? <ChillSongs /> : ''}
+                { hopefulIsClicked  /*&& songDisplay */? <HopefulSongs /> : ''}
+                { nostalgicIsClicked  /*&& songDisplay */? <NostalgicSongs /> : ''}
+                { romanticIsClicked  /*&& songDisplay */? <RomanticSongs /> : ''}
             </div>
         </div>
     )
