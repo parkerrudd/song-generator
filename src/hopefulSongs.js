@@ -10,9 +10,9 @@ function HopefulSongs() {
     
     return (
         <div className="song-box">
-            <img src={songDisplayed.artwork} alt="album artwork" />
-            <h3>{songDisplayed.songName}</h3>
-            <p>{songDisplayed.artistName}</p>
+            <iframe src={songDisplayed.hyperlink} allowfullscreen className="hyperlink"></iframe>
+            {/*<h3>{songDisplayed.songName}</h3>
+            <p>{songDisplayed.artistName}</p>*/}
         </div>
     )
     
