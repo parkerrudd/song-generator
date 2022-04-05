@@ -120,6 +120,17 @@ button:hover {
   border: none;
   height: 290px;
   max-width: 60vw;
+  box-shadow: 2px 2px 15px 2px #444343;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .song-box {
