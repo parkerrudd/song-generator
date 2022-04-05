@@ -98,7 +98,9 @@ function Moods() {
             setChillIsClicked(!chillIsClicked)
         } if (romanticIsClicked) {
             setRomanticIsClicked(!romanticIsClicked)
-        }
+        } if (hopefulIsClicked) {
+            setHopefulIsClicked(!hopefulIsClicked)
+        } 
 
     }
 
@@ -113,9 +115,11 @@ function Moods() {
             setSadIsClicked(!sadIsClicked)
         } if (chillIsClicked) {
             setChillIsClicked(!chillIsClicked)
-        } if (romanticIsClicked) {
-            setRomanticIsClicked(!romanticIsClicked)
-        }
+        } if (hopefulIsClicked) {
+            setHopefulIsClicked(!hopefulIsClicked)
+        } if (nostalgicIsClicked) {
+            setNostalgicIsClicked(!nostalgicIsClicked)
+        } 
 
     }
 
