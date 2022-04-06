@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './App.css';
 import SongData from './songData.json'; 
 
@@ -9,7 +9,7 @@ function Songs() {
     
     return (
         <div className="song-box">
-        <iframe src={songDisplayed.hyperlink} allowfullscreen className="hyperlink"></iframe>
+        <iframe className="hyperlink" src={songDisplayed.hyperlink}></iframe>
             {/*<h3>{songDisplayed.songName}</h3>
             <p>{songDisplayed.artistName}</p>*/}
         </div>

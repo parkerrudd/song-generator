@@ -1,20 +1,18 @@
 import React, { Component, useState }from 'react';
 import './App.css';
 import Moods from './moods'; 
-import Songs from './songs'; 
-import songGeneration from './generator'; 
 
 function App() {
 
- 
+ const [background, setBackground] = useState("url(/images/stacked-waves-haikei.svg)")
 
  
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: background }}>
       <h1 id='header'>How Are You Feeling?</h1>
         <div className="mood-selectors-container">
           <div className="mood-selectors">
-            <Moods />
+            <Moods updateBackground={background => setBackground(background)}/>
           </div>
         </div>
         

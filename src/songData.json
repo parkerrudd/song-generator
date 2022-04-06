@@ -96,5 +96,20 @@
         "Hopeful": true, 
         "Nostalgic": true,
         "Introspective": true
+    }, 
+    {
+        "songName": "Love on the Weekend", 
+        "artistName": "John Mayer", 
+        "hyperlink":"https://fanlink.to/loveontheweekend?embed=true",
+        "Happy": true, 
+        "Hopeful": true, 
+        "Nostalgic": true, 
+        "Romantic": true
+    }, 
+    {
+        "songName": "Watch Me", 
+        "artistName": "Labi Siffre", 
+        "hyperlink":"https://fanlink.to/watchmelabisiffre?embed=true", 
+        "Nostalgic": true
     }       
 ] 
