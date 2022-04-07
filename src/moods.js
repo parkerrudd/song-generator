@@ -128,19 +128,19 @@ function Moods(props) {
         <div className="big-container">
             <div className="container">
                 <div className="mood-selector">
-                    <button onClick={() => { happyButtonClick(); props.updateBackground("url(/images/layered-waves-haikei.svg)"); }} className={happyIsClicked ? 'clicked' : "mood-btns"}  id="happy">Happy</button>
+                    <button onClick={() => { happyButtonClick(); props.updateBackground("url(/images/layered-waves-haikei.svg)"); props.addRain("")}} className={happyIsClicked ? 'clicked' : "mood-btns"}  id="happy">Happy</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {sadButtonClick(); props.updateBackground("url(/images/sad-waves-haikei.svg)"); }} className={sadIsClicked ? 'clicked' : "mood-btns"} id="sad">Sad</button>
+                    <button onClick={() => {sadButtonClick(); props.updateBackground("url(/images/sad-waves-haikei.svg)"); props.addRain("rain")}} className={sadIsClicked ? 'clicked' : "mood-btns"} id="sad">Sad</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => { chillButtonClick(); props.updateBackground("url(/images/chill-waves-haikei.svg)"); }} className={chillIsClicked ? 'clicked' : "mood-btns"}  id="chill">Chill</button>
+                    <button onClick={() => { chillButtonClick(); props.updateBackground("url(/images/chill-waves-haikei.svg)"); props.addRain("") }} className={chillIsClicked ? 'clicked' : "mood-btns"}  id="chill">Chill</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {hopefulButtonClick(); props.updateBackground("url(/images/hopeful-layered-waves-haikei.svg)");}} className={hopefulIsClicked ? 'clicked' : "mood-btns"}  id="hopeful">Hopeful</button>
+                    <button onClick={() => {hopefulButtonClick(); props.updateBackground("url(/images/hopeful-layered-waves-haikei.svg)"); props.addRain("")}} className={hopefulIsClicked ? 'clicked' : "mood-btns"}  id="hopeful">Hopeful</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {nostalgicButtonClick(); props.updateBackground("url(/images/nostalgic-blob-scene-haikei.svg)");}} className={nostalgicIsClicked ? 'clicked' : "mood-btns"} id="nostalgic">Nostalgic</button>
+                    <button onClick={() => {nostalgicButtonClick(); props.updateBackground("url(/images/nostalgic-blob-scene-haikei.svg)"); props.addRain("")}} className={nostalgicIsClicked ? 'clicked' : "mood-btns"} id="nostalgic">Nostalgic</button>
                 </div>
                 {/*<div className="mood-selector">
                     <button className="mood-btns" id="energetic">Energetic</button>
@@ -152,7 +152,7 @@ function Moods(props) {
                     <button className="mood-btns" id="angry">Angry</button>
                  </div>*/}
                 <div className="mood-selector">
-                    <button onClick={() => {romanticButtonClick(); props.updateBackground("url(/images/romantic-steps-haikei.svg)"); }} className={romanticIsClicked ? 'clicked' : "mood-btns"} id="romantic">Romantic</button>
+                    <button onClick={() => {romanticButtonClick(); props.updateBackground("url(/images/romantic-steps-haikei.svg)"); props.addRain("")}} className={romanticIsClicked ? 'clicked' : "mood-btns"} id="romantic">Romantic</button>
                 </div>
             </div>
            {/* <div className="btn">

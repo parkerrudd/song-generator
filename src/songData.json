@@ -111,5 +111,11 @@
         "artistName": "Labi Siffre", 
         "hyperlink":"https://fanlink.to/watchmelabisiffre?embed=true", 
         "Nostalgic": true
+    }, 
+    {
+        "songName": "Nightrider", 
+        "artistName": "Tom Misch", 
+        "hyperlink":"https://fanlink.to/nightridertommisch?embed=true",
+        "Chill": true
     }       
 ] 

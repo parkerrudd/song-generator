@@ -7,11 +7,28 @@
   font-family: 'Kanit', sans-serif;
   font-weight: 1000;
 }
+.rain {
+  background-image: url("/public/images/rain-png-transparent-9.png");
+  height: 100vh; 
+  background-size: cover;
+  animation: rain .2s infinite; 
+  opacity: 1;
+}
+
+@keyframes rain {
+  to {
+    background-position: 0 0;
+  }
+  from {
+    background-position: 20% 100%;
+  }
+}
 
 .App {
   min-height: 100vh;
   /* background-color: #059FCB; */
-  /* background-image: linear-gradient(to right, #059FCB, #5dd1f1); */
+  /* background-image: ; */
+  opacity: .97;
   transition: 1s;
   padding: .5em;
   display: flex; 
@@ -22,6 +39,7 @@
   background-position: center;
   background-size: cover;
 }
+
 /* 
 .big-container {
   display: flex; 
@@ -75,6 +93,7 @@
 @media screen and (max-width: 700px) {
   .container {
     max-width: 85vw; 
+    margin-left: 1.5em;
   }
 
   .mood-btns {
@@ -124,7 +143,7 @@ button:hover {
   border-radius: 3px;
   border: none;
   height: 290px;
-  max-width: 60vw;
+  max-width: 75vw;
   box-shadow: 2px 2px 15px 2px #444343;
   animation: fadeIn 1.5s ease-in;
 }
@@ -134,9 +153,9 @@ button:hover {
   cursor: pointer;
 } */
 
-.hyperlink-expand {
+/* .hyperlink-expand {
   height: 500px;
-}
+} */
 
 @keyframes fadeIn {
   from {

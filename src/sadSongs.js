@@ -9,7 +9,7 @@ function SadSongs() {
     const songDisplayed = songListFiltered[Math.floor(Math.random() * songListFiltered.length)] 
     return (
         <div className="song-box">
-            <iframe src={songDisplayed.hyperlink} allowfullscreen className="hyperlink"></iframe>
+            <iframe src={songDisplayed.hyperlink} className="hyperlink"></iframe>
             {/*<h3>{songDisplayed.songName}</h3>
             <p>{songDisplayed.artistName}</p>*/}
         </div>
