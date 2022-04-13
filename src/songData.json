@@ -117,5 +117,14 @@
         "artistName": "Tom Misch", 
         "hyperlink":"https://fanlink.to/nightridertommisch?embed=true",
         "Chill": true
+    }, 
+    {
+        "hyperlink": "https://fanlink.to/followthesunxavierrudd?embed=true", 
+        "Happy": true, 
+        "Chill": true
+    }, 
+    {
+        "hyperlink": "https://fanlink.to/isawsparks?embed=true", 
+        "Sad": true
     }       
 ] 
