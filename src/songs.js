@@ -19,7 +19,7 @@ class Songs extends Component {
         method: 'get',
         url: 'https://api.spotify.com/v1/playlists/4S339VsAxWlerLiR3L3Uz2',
         headers: { 
-            'Authorization': 'Bearer BQA6ooDCPqSC1LnRZcRIS0UAJVuSOYsMWukWskvV6wVLzWQr_5_hx4WmdjtXoroNHjDu78VcGjJnz9oLnVm3ylgz-Xr4w-95AcoDEha8SDdcolJTmJW36v0nXB6ktGhnsAukYGs5SZhYeDupvba5_m8z23uIbkEKGx0'
+            'Authorization': 'Bearer (token) '
         }
         };
 
