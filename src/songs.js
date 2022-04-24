@@ -1,21 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
 import './App.css';
 import SongData from './songData.json'; 
+import axios from "axios";
 
-function Songs() {
+class Songs extends Component {
+    constructor(props) {
+        super(props)
+    }
+    state = {
+       code: null
+    };
+
+    componentDidMount() {
+        let playlist, tracks, embedCode, url
+        var axios = require('axios');
+
+        var config = {
+        method: 'get',
+        url: 'https://api.spotify.com/v1/playlists/4S339VsAxWlerLiR3L3Uz2',
+        headers: { 
+            'Authorization': 'Bearer BQA6ooDCPqSC1LnRZcRIS0UAJVuSOYsMWukWskvV6wVLzWQr_5_hx4WmdjtXoroNHjDu78VcGjJnz9oLnVm3ylgz-Xr4w-95AcoDEha8SDdcolJTmJW36v0nXB6ktGhnsAukYGs5SZhYeDupvba5_m8z23uIbkEKGx0'
+        }
+        };
+
+        axios(config)
+        .then(function (response) {
+            playlist = response.data; 
+            tracks = playlist.tracks.items
+            const songRandom = tracks[Math.floor(Math.random() * tracks.length)] 
+            const songDisplayed = songRandom.track.external_urls.spotify; 
+            embedCode = songDisplayed.slice(31, 53)
+            url = "https://open.spotify.com/embed/track/" + embedCode + "?utm_source=generator"
+            console.log(url)
+            return url;
+        })
         
-    const songListFiltered = SongData.filter(item => item.Happy) 
-    const songDisplayed = songListFiltered[Math.floor(Math.random() * songListFiltered.length)] 
+        .catch(function (error) {
+        console.log(error);
+        });
+
+        this.setState({
+            code: url
+        })
+    }; 
+    
+    render () {    
+    const { code } = this.state; 
     
     return (
         <div className="song-box">
-        <iframe className="hyperlink" src={songDisplayed.hyperlink}></iframe>
-            {/*<h3>{songDisplayed.songName}</h3>
-            <p>{songDisplayed.artistName}</p>*/}
+            <h1>{code}</h1>
+            <iframe className="hyperlink" src={code} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
         </div>
-    )
-    
-    
+    )}
 }
 
 export default Songs; 

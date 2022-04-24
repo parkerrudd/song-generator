@@ -160,9 +160,9 @@ function Moods(props) {
                 </div>*/}
 
             <div className="generator">
-                { happyIsClicked /* && songDisplay */ ? <Songs /> : ''}
+                { happyIsClicked /* && songDisplay */ ? <Songs token={props.token} /> : ''}
                 { sadIsClicked  /*&& songDisplay */? <SadSongs /> : ''}
-                { chillIsClicked  /*&& songDisplay */? <ChillSongs /> : ''}
+                { chillIsClicked  /*&& songDisplay */? <ChillSongs token={props.token} /> : ''}
                 { hopefulIsClicked  /*&& songDisplay */? <HopefulSongs /> : ''}
                 { nostalgicIsClicked  /*&& songDisplay */? <NostalgicSongs /> : ''}
                 { romanticIsClicked  /*&& songDisplay */? <RomanticSongs /> : ''}
