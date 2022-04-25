@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css'; 
-import Songs from "./songs";
+import HappySongs from "./happySongs";
 import SadSongs from "./sadSongs";
 import ChillSongs from "./chillSongs";
 import HopefulSongs from "./hopefulSongs";
 import NostalgicSongs from './nostalgicSongs'; 
 import RomanticSongs from "./romanticSongs";
+import axios from "axios";
 
 function Moods(props) {
     //push every selected mood to this array, only allow max 3 moods to be selected, use arr in songs component to determine which to display
@@ -123,49 +124,81 @@ function Moods(props) {
 
     }
 
+    const NOSTALGIC_PLAYLIST = "https://api.spotify.com/v1/playlists/4S339VsAxWlerLiR3L3Uz2";
+    const HAPPY_PLAYLIST = "https://api.spotify.com/v1/playlists/4S339VsAxWlerLiR3L3Uz2?si=8ae5c5ff6eca4f35"; 
+    const CHILL_PLAYLIST = "https://api.spotify.com/v1/playlists/4S3UrytiOvrHyhz3jtHJvV?si=597fd7b0e6cb40ea"; 
+    const ROMANTIC_PLAYLIST = "https://api.spotify.com/v1/playlists/0CnmbCvf7SI4l6yLtlH1kK?si=8b71dc5ce5454819"; 
+    const SAD_PLAYLIST = "https://api.spotify.com/v1/playlists/5KEyQrelBJ8nWOHctbkQv4?si=05c8865a4474414c"; 
+
+    const [token, setToken] = useState(""); 
+    const [data, setData] = useState(''); 
+
+    useEffect(() => {
+        if (localStorage.getItem("accessToken")) {
+            setToken(localStorage.getItem("accessToken")); 
+        }
+    }, []); 
+
+
+    const handleGetPlaylist = (PLAYLIST) => {
+        let playlist, tracks, embedCode, url
+        var axios = require('axios');
+
+        var config = {
+        method: 'get',
+        url: PLAYLIST,
+        headers: { 
+            Authorization: "Bearer " + token
+        }
+        };
+
+        axios(config)
+        .then(function (response) {
+            playlist = response.data; 
+            tracks = playlist.tracks.items
+            const songRandom = tracks[Math.floor(Math.random() * tracks.length)] 
+            const songDisplayed = songRandom.track.external_urls.spotify; 
+            embedCode = songDisplayed.slice(31, 53)
+            url = "https://open.spotify.com/embed/track/" + embedCode + "?utm_source=generator"
+            setData(url); 
+        })
+        .catch(function (error) {
+        console.log(error); 
+        });
+    }; 
+
+
 
     return (
         <div className="big-container">
             <div className="container">
                 <div className="mood-selector">
-                    <button onClick={() => { happyButtonClick(); props.updateBackground("url(/images/layered-waves-haikei.svg)"); props.addRain("")}} className={happyIsClicked ? 'clicked' : "mood-btns"}  id="happy">Happy</button>
+                    <button onClick={() => {handleGetPlaylist(HAPPY_PLAYLIST); happyButtonClick(); props.updateBackground("url(/images/layered-waves-haikei.svg)"); props.addRain("")}} className={happyIsClicked ? 'clicked' : "mood-btns"}  id="happy">Happy</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {sadButtonClick(); props.updateBackground("url(/images/sad-waves-haikei.svg)"); props.addRain("rain")}} className={sadIsClicked ? 'clicked' : "mood-btns"} id="sad">Sad</button>
+                    <button onClick={() => {handleGetPlaylist(SAD_PLAYLIST); sadButtonClick(); props.updateBackground("url(/images/sad-waves-haikei.svg)"); props.addRain("rain")}} className={sadIsClicked ? 'clicked' : "mood-btns"} id="sad">Sad</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => { chillButtonClick(); props.updateBackground("url(/images/chill-waves-haikei.svg)"); props.addRain("") }} className={chillIsClicked ? 'clicked' : "mood-btns"}  id="chill">Chill</button>
+                    <button onClick={() => {handleGetPlaylist(CHILL_PLAYLIST); chillButtonClick(); props.updateBackground("url(/images/chill-waves-haikei.svg)"); props.addRain("") }} className={chillIsClicked ? 'clicked' : "mood-btns"}  id="chill">Chill</button>
                 </div>
                 <div className="mood-selector">
                     <button onClick={() => {hopefulButtonClick(); props.updateBackground("url(/images/hopeful-layered-waves-haikei.svg)"); props.addRain("")}} className={hopefulIsClicked ? 'clicked' : "mood-btns"}  id="hopeful">Hopeful</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {nostalgicButtonClick(); props.updateBackground("url(/images/nostalgic-blob-scene-haikei.svg)"); props.addRain("")}} className={nostalgicIsClicked ? 'clicked' : "mood-btns"} id="nostalgic">Nostalgic</button>
-                </div>
-                {/*<div className="mood-selector">
-                    <button className="mood-btns" id="energetic">Energetic</button>
+                    <button onClick={() => {handleGetPlaylist(NOSTALGIC_PLAYLIST); nostalgicButtonClick(); props.updateBackground("url(/images/nostalgic-blob-scene-haikei.svg)"); props.addRain("")}} className={nostalgicIsClicked ? 'clicked' : "mood-btns"} id="nostalgic">Nostalgic</button>
                 </div>
                 <div className="mood-selector">
-                    <button className="mood-btns" id="introspective">Introspective</button>
-                </div>}
-                {/*<div className="mood-selector">
-                    <button className="mood-btns" id="angry">Angry</button>
-                 </div>*/}
-                <div className="mood-selector">
-                    <button onClick={() => {romanticButtonClick(); props.updateBackground("url(/images/romantic-steps-haikei.svg)"); props.addRain("")}} className={romanticIsClicked ? 'clicked' : "mood-btns"} id="romantic">Romantic</button>
+                    <button onClick={() => {handleGetPlaylist(ROMANTIC_PLAYLIST); romanticButtonClick(); props.updateBackground("url(/images/romantic-steps-haikei.svg)"); props.addRain("")}} className={romanticIsClicked ? 'clicked' : "mood-btns"} id="romantic">Romantic</button>
                 </div>
             </div>
-           {/* <div className="btn">
-                <button onClick={() => setSongDisplay(!songDisplay)}>Find Your Song</button> 
-                </div>*/}
 
             <div className="generator">
-                { happyIsClicked /* && songDisplay */ ? <Songs token={props.token} /> : ''}
-                { sadIsClicked  /*&& songDisplay */? <SadSongs /> : ''}
-                { chillIsClicked  /*&& songDisplay */? <ChillSongs token={props.token} /> : ''}
-                { hopefulIsClicked  /*&& songDisplay */? <HopefulSongs /> : ''}
-                { nostalgicIsClicked  /*&& songDisplay */? <NostalgicSongs /> : ''}
-                { romanticIsClicked  /*&& songDisplay */? <RomanticSongs /> : ''}
+                { happyIsClicked ? <HappySongs data = {data}/> : ''}
+                { sadIsClicked ? <SadSongs data = {data} /> : ''}
+                { chillIsClicked ? <ChillSongs data = {data} /> : ''}
+                { hopefulIsClicked ? <HopefulSongs data = {data} /> : ''}
+                { nostalgicIsClicked ? <NostalgicSongs data = {data}/> : ''}
+                { romanticIsClicked ? <RomanticSongs data = {data}/> : ''}
             </div>
         </div>
     )

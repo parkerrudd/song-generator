@@ -1,20 +1,14 @@
-import React from "react";
-import './App.css';
-import SongData from './songData.json'; 
+import React, { useEffect, useState } from "react";
+import './App.css'; 
+import axios from "axios";
 
-function NostalgicSongs() {
-        
-    const songListFiltered = SongData.filter(item => item.Nostalgic) 
-    const songDisplayed = songListFiltered[Math.floor(Math.random() * songListFiltered.length)] 
-    
+function NostalgicSongs(props) {
+
     return (
         <div className="song-box">
-            <iframe src={songDisplayed.hyperlink} className="hyperlink"></iframe>
-            {/*<h3>{songDisplayed.songName}</h3>
-            <p>{songDisplayed.artistName}</p>*/}
+            <iframe src={props.data} className="hyperlink"></iframe>
         </div>
     )
-    
     
 }
 
