@@ -36,10 +36,10 @@ function App() {
   });
 
 
-  const [login, setLogin] = useState(true);
+  // const [login, setLogin] = useState(true);
 
   const handleLogin = () => {
-    setLogin(false);
+    // setLogin(false);
     window.location = `${SPOTIFY_AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token&show_dialog=true`;
   }
 
@@ -49,8 +49,8 @@ function App() {
   return (
     <div className={bgRain}>
       <div className="App" style={{ backgroundImage: background }}>
-      {login ? <button onClick={handleLogin}>Connect With Spotify</button>: ''}
-        
+      {!localStorage.getItem("accessToken") ? <button onClick={handleLogin}>Connect With Spotify</button>: null}
+
         <h1 id='header'>How Are You Feeling?</h1>
         <div className="mood-selectors-container">
           <div className="mood-selectors">

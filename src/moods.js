@@ -9,15 +9,11 @@ import RomanticSongs from "./romanticSongs";
 import axios from "axios";
 
 function Moods(props) {
-    //push every selected mood to this array, only allow max 3 moods to be selected, use arr in songs component to determine which to display
-    let moodsArr = []
 
     const [happyIsClicked, setHappyIsClicked] = useState(false)
-    const [songDisplay, setSongDisplay] = useState(false); 
 
     const happyButtonClick = () => {
-        setHappyIsClicked(!happyIsClicked)
-        moodsArr.push("Happy") 
+        setHappyIsClicked(true)
         if (sadIsClicked) {
             setSadIsClicked(!sadIsClicked)
         } if (chillIsClicked) {
@@ -33,8 +29,7 @@ function Moods(props) {
     const [sadIsClicked, setSadIsClicked] = useState(false)
 
     const sadButtonClick = () => {
-        setSadIsClicked(!sadIsClicked)
-        moodsArr.push("Sad")
+        setSadIsClicked(true)
         if (happyIsClicked) {
             setHappyIsClicked(!happyIsClicked)
         } if (chillIsClicked) {
@@ -51,8 +46,7 @@ function Moods(props) {
     const [chillIsClicked, setChillIsClicked] = useState(false)
 
     const chillButtonClick = () => {
-        setChillIsClicked(!chillIsClicked)
-        moodsArr.push("Chill")
+        setChillIsClicked(true)
         if (happyIsClicked) {
             setHappyIsClicked(!happyIsClicked)
         } if (sadIsClicked) {
@@ -70,8 +64,7 @@ function Moods(props) {
     const [hopefulIsClicked, setHopefulIsClicked] = useState(false)
 
     const hopefulButtonClick = () => {
-        setHopefulIsClicked(!hopefulIsClicked)
-        moodsArr.push("Chill")
+        setHopefulIsClicked(true)
         if (happyIsClicked) {
             setHappyIsClicked(!happyIsClicked)
         } if (sadIsClicked) {
@@ -89,8 +82,7 @@ function Moods(props) {
     const [nostalgicIsClicked, setNostalgicIsClicked] = useState(false)
 
     const nostalgicButtonClick = () => {
-        setNostalgicIsClicked(!nostalgicIsClicked)
-        moodsArr.push("Chill")
+        setNostalgicIsClicked(true)
         if (happyIsClicked) {
             setHappyIsClicked(!happyIsClicked)
         } if (sadIsClicked) {
@@ -108,8 +100,7 @@ function Moods(props) {
     const [romanticIsClicked, setRomanticIsClicked] = useState(false)
 
     const romanticButtonClick = () => {
-        setRomanticIsClicked(!romanticIsClicked)
-        moodsArr.push("Chill")
+        setRomanticIsClicked(true)
         if (happyIsClicked) {
             setHappyIsClicked(!happyIsClicked)
         } if (sadIsClicked) {

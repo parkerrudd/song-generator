@@ -9,6 +9,6 @@ function HopefulSongs(props) {
         </div>
     )
     
-}
+}; 
 
 export default HopefulSongs; 
