@@ -6,7 +6,6 @@ import ChillSongs from "./chillSongs";
 import HopefulSongs from "./hopefulSongs";
 import NostalgicSongs from './nostalgicSongs'; 
 import RomanticSongs from "./romanticSongs";
-import axios from "axios";
 
 function Moods(props) {
 
@@ -120,6 +119,7 @@ function Moods(props) {
     const CHILL_PLAYLIST = "https://api.spotify.com/v1/playlists/4S3UrytiOvrHyhz3jtHJvV?si=597fd7b0e6cb40ea"; 
     const ROMANTIC_PLAYLIST = "https://api.spotify.com/v1/playlists/0CnmbCvf7SI4l6yLtlH1kK?si=8b71dc5ce5454819"; 
     const SAD_PLAYLIST = "https://api.spotify.com/v1/playlists/5KEyQrelBJ8nWOHctbkQv4?si=05c8865a4474414c"; 
+    const HOPEFUL_PLAYLIST = "https://api.spotify.com/v1/playlists/0HVEMsbWzckSmgI05MXWCs?si=a1837b95a92b491a"; 
 
     const [token, setToken] = useState(""); 
     const [data, setData] = useState(''); 
@@ -173,7 +173,7 @@ function Moods(props) {
                     <button onClick={() => {handleGetPlaylist(CHILL_PLAYLIST); chillButtonClick(); props.updateBackground("url(/images/chill-waves-haikei.svg)"); props.addRain("") }} className={chillIsClicked ? 'clicked' : "mood-btns"}  id="chill">Chill</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {hopefulButtonClick(); props.updateBackground("url(/images/hopeful-layered-waves-haikei.svg)"); props.addRain("")}} className={hopefulIsClicked ? 'clicked' : "mood-btns"}  id="hopeful">Hopeful</button>
+                    <button onClick={() => {handleGetPlaylist(HOPEFUL_PLAYLIST); hopefulButtonClick(); props.updateBackground("url(/images/hopeful-layered-waves-haikei.svg)"); props.addRain("")}} className={hopefulIsClicked ? 'clicked' : "mood-btns"}  id="hopeful">Hopeful</button>
                 </div>
                 <div className="mood-selector">
                     <button onClick={() => {handleGetPlaylist(NOSTALGIC_PLAYLIST); nostalgicButtonClick(); props.updateBackground("url(/images/nostalgic-blob-scene-haikei.svg)"); props.addRain("")}} className={nostalgicIsClicked ? 'clicked' : "mood-btns"} id="nostalgic">Nostalgic</button>
