@@ -15,11 +15,12 @@ const getReturnedParamsFromSpotify = (hash) => {
   const paramsSplitUp = paramsInUrl.reduce((accumulator, currentValue) => {
     const [key, value] = currentValue.split("=");
     accumulator[key] = value;
+    console.log(accumulator)
     return accumulator;
   }, {});
 
   return paramsSplitUp;
-}
+}; 
 
 
 function App() {
@@ -35,7 +36,11 @@ function App() {
     }
   });
 
-
+  useEffect(() => {
+    if (window.location.href.indexOf('access_token') > -1) {
+      setLogin("btn-hide"); 
+    }
+  }, []); 
 
 
   const handleLogin = () => {
@@ -44,17 +49,20 @@ function App() {
 
   const [background, setBackground] = useState("url(/images/layered-waves-haikei.svg)"); 
   const [bgRain, setbgRain] = useState(""); 
-  const [login, setLogin] = useState('');
+  const [login, setLogin] = useState("");
 
   return (
     <div className={bgRain}>
       <div className="App" style={{ backgroundImage: background }}>
-       <button className={login} onClick={handleLogin}>Connect With Spotify</button>
+       <button className={login} id="spotify-btn" onClick={handleLogin}>Connect With Spotify</button>
 
-        <h1 id='header'>How Are You Feeling?</h1>
+       {window.location.href.indexOf('access_token') > -1 ?  <h1 id='header'>How Are You Feeling? </h1> : null } 
         <div className="mood-selectors-container">
           <div className="mood-selectors">
-            <Moods removeSpotifyBtn={login => setLogin(login)} updateBackground={background => setBackground(background)} addRain={bgRain => setbgRain(bgRain)} />
+            {
+              window.location.href.indexOf('access_token') > -1 ?
+               <Moods updateBackground={background => setBackground(background)} addRain={bgRain => setbgRain(bgRain)} /> 
+            : null}
           </div>
         </div>
       </div>

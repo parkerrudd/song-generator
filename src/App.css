@@ -134,6 +134,10 @@ button:hover {
   background-color: #185465; 
 }
 
+#spotify-btn {
+  font-size: 2em;
+}
+
 .btn-hide {
   display: none;
 }
