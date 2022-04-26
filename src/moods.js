@@ -25,7 +25,8 @@ function Moods(props) {
         } if (romanticIsClicked) {
             setRomanticIsClicked(!romanticIsClicked)
         }
-    }
+    }; 
+
     const [sadIsClicked, setSadIsClicked] = useState(false)
 
     const sadButtonClick = () => {
@@ -41,7 +42,7 @@ function Moods(props) {
         } if (romanticIsClicked) {
             setRomanticIsClicked(!romanticIsClicked)
         }
-    }
+    }; 
 
     const [chillIsClicked, setChillIsClicked] = useState(false)
 
@@ -59,7 +60,7 @@ function Moods(props) {
             setRomanticIsClicked(!romanticIsClicked)
         }
 
-    }
+    }; 
 
     const [hopefulIsClicked, setHopefulIsClicked] = useState(false)
 
@@ -77,7 +78,7 @@ function Moods(props) {
             setRomanticIsClicked(!romanticIsClicked)
         }
 
-    }
+    }; 
 
     const [nostalgicIsClicked, setNostalgicIsClicked] = useState(false)
 
@@ -95,7 +96,7 @@ function Moods(props) {
             setHopefulIsClicked(!hopefulIsClicked)
         } 
 
-    }
+    }; 
 
     const [romanticIsClicked, setRomanticIsClicked] = useState(false)
 
@@ -122,7 +123,6 @@ function Moods(props) {
     const SAD_PLAYLIST = "https://api.spotify.com/v1/playlists/5KEyQrelBJ8nWOHctbkQv4?si=05c8865a4474414c"; 
     const HOPEFUL_PLAYLIST = "https://api.spotify.com/v1/playlists/4ePdaQklzFSjRSbay84KnA?si=561d0058a4394a71"; 
 
-
     const [token, setToken] = useState(""); 
     const [data, setData] = useState(''); 
 
@@ -131,7 +131,6 @@ function Moods(props) {
             setToken(localStorage.getItem("accessToken")); 
         }
     }, []); 
-
 
     const handleGetPlaylist = (PLAYLIST) => {
         let playlist, tracks, embedCode, url
@@ -159,8 +158,6 @@ function Moods(props) {
         console.log(error); 
         });
     }; 
-
-
 
     return (
         <div className="big-container">
@@ -195,7 +192,7 @@ function Moods(props) {
             </div>
         </div>
     )
-}
+}; 
 
 
 export default Moods; 
