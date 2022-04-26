@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/song-generator/static/css/main.cf9c2314.css",
+    "main.js": "/song-generator/static/js/main.6cd1e807.js",
+    "static/js/787.b5def03b.chunk.js": "/song-generator/static/js/787.b5def03b.chunk.js",
+    "static/media/rain-png-transparent-9.png": "/song-generator/static/media/rain-png-transparent-9.fac3bd87893691cdafa9.png",
+    "index.html": "/song-generator/index.html",
+    "main.cf9c2314.css.map": "/song-generator/static/css/main.cf9c2314.css.map",
+    "main.6cd1e807.js.map": "/song-generator/static/js/main.6cd1e807.js.map",
+    "787.b5def03b.chunk.js.map": "/song-generator/static/js/787.b5def03b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf9c2314.css",
+    "static/js/main.6cd1e807.js"
+  ]
+}
