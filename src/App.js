@@ -49,7 +49,7 @@ function App() {
   return (
     <div className={bgRain}>
       <div className="App" style={{ backgroundImage: background }}>
-      {!localStorage.getItem("accessToken") ? <button onClick={handleLogin}>Connect With Spotify</button>: null}
+      {localStorage.getItem("accessToken") ? <button onClick={handleLogin}>Connect With Spotify</button>: null}
 
         <h1 id='header'>How Are You Feeling?</h1>
         <div className="mood-selectors-container">
