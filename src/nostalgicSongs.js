@@ -5,7 +5,7 @@ function NostalgicSongs(props) {
 
     return (
         <div className="song-box">
-            <iframe src={props.data} className="hyperlink"></iframe>
+            <iframe src={props.data} className="hyperlink" title="nostalgic-song-frame"></iframe>
         </div>
     )
     
