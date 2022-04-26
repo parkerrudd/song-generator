@@ -134,6 +134,10 @@ button:hover {
   background-color: #185465; 
 }
 
+.btn-hide {
+  display: none;
+}
+
 .added-items {
   margin: 1em;
   display: flex;

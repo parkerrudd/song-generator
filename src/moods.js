@@ -120,7 +120,8 @@ function Moods(props) {
     const CHILL_PLAYLIST = "https://api.spotify.com/v1/playlists/4S3UrytiOvrHyhz3jtHJvV?si=597fd7b0e6cb40ea"; 
     const ROMANTIC_PLAYLIST = "https://api.spotify.com/v1/playlists/0CnmbCvf7SI4l6yLtlH1kK?si=8b71dc5ce5454819"; 
     const SAD_PLAYLIST = "https://api.spotify.com/v1/playlists/5KEyQrelBJ8nWOHctbkQv4?si=05c8865a4474414c"; 
-    const HOPEFUL_PLAYLIST = "https://api.spotify.com/v1/playlists/0HVEMsbWzckSmgI05MXWCs?si=a1837b95a92b491a"; 
+    const HOPEFUL_PLAYLIST = "https://api.spotify.com/v1/playlists/4ePdaQklzFSjRSbay84KnA?si=561d0058a4394a71"; 
+
 
     const [token, setToken] = useState(""); 
     const [data, setData] = useState(''); 
@@ -165,22 +166,22 @@ function Moods(props) {
         <div className="big-container">
             <div className="container">
                 <div className="mood-selector">
-                    <button onClick={() => {handleGetPlaylist(HAPPY_PLAYLIST); happyButtonClick(); props.updateBackground("url(/images/layered-waves-haikei.svg)"); props.addRain("")}} className={happyIsClicked ? 'clicked' : "mood-btns"}  id="happy">Happy</button>
+                    <button onClick={() => {handleGetPlaylist(HAPPY_PLAYLIST); props.removeSpotifyBtn("btn-hide"); happyButtonClick(); props.updateBackground("url(/images/layered-waves-haikei.svg)"); props.addRain("")}} className={happyIsClicked ? 'clicked' : "mood-btns"}  id="happy">Happy</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {handleGetPlaylist(SAD_PLAYLIST); sadButtonClick(); props.updateBackground("url(/images/sad-waves-haikei.svg)"); props.addRain("rain")}} className={sadIsClicked ? 'clicked' : "mood-btns"} id="sad">Sad</button>
+                    <button onClick={() => {handleGetPlaylist(SAD_PLAYLIST); props.removeSpotifyBtn("btn-hide"); sadButtonClick(); props.updateBackground("url(/images/sad-waves-haikei.svg)"); props.addRain("rain")}} className={sadIsClicked ? 'clicked' : "mood-btns"} id="sad">Sad</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {handleGetPlaylist(CHILL_PLAYLIST); chillButtonClick(); props.updateBackground("url(/images/chill-waves-haikei.svg)"); props.addRain("") }} className={chillIsClicked ? 'clicked' : "mood-btns"}  id="chill">Chill</button>
+                    <button onClick={() => {handleGetPlaylist(CHILL_PLAYLIST); props.removeSpotifyBtn("btn-hide"); chillButtonClick(); props.updateBackground("url(/images/chill-waves-haikei.svg)"); props.addRain("") }} className={chillIsClicked ? 'clicked' : "mood-btns"}  id="chill">Chill</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {handleGetPlaylist(HOPEFUL_PLAYLIST); hopefulButtonClick(); props.updateBackground("url(/images/hopeful-layered-waves-haikei.svg)"); props.addRain("")}} className={hopefulIsClicked ? 'clicked' : "mood-btns"}  id="hopeful">Hopeful</button>
+                    <button onClick={() => {handleGetPlaylist(HOPEFUL_PLAYLIST); props.removeSpotifyBtn("btn-hide"); hopefulButtonClick(); props.updateBackground("url(/images/hopeful-layered-waves-haikei.svg)"); props.addRain("")}} className={hopefulIsClicked ? 'clicked' : "mood-btns"}  id="hopeful">Hopeful</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {handleGetPlaylist(NOSTALGIC_PLAYLIST); nostalgicButtonClick(); props.updateBackground("url(/images/nostalgic-blob-scene-haikei.svg)"); props.addRain("")}} className={nostalgicIsClicked ? 'clicked' : "mood-btns"} id="nostalgic">Nostalgic</button>
+                    <button onClick={() => {handleGetPlaylist(NOSTALGIC_PLAYLIST); props.removeSpotifyBtn("btn-hide"); nostalgicButtonClick(); props.updateBackground("url(/images/nostalgic-blob-scene-haikei.svg)"); props.addRain("")}} className={nostalgicIsClicked ? 'clicked' : "mood-btns"} id="nostalgic">Nostalgic</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {handleGetPlaylist(ROMANTIC_PLAYLIST); romanticButtonClick(); props.updateBackground("url(/images/romantic-steps-haikei.svg)"); props.addRain("")}} className={romanticIsClicked ? 'clicked' : "mood-btns"} id="romantic">Romantic</button>
+                    <button onClick={() => {handleGetPlaylist(ROMANTIC_PLAYLIST); props.removeSpotifyBtn("btn-hide"); romanticButtonClick(); props.updateBackground("url(/images/romantic-steps-haikei.svg)"); props.addRain("")}} className={romanticIsClicked ? 'clicked' : "mood-btns"} id="romantic">Romantic</button>
                 </div>
             </div>
 

@@ -36,25 +36,25 @@ function App() {
   });
 
 
-  // const [login, setLogin] = useState(true);
+
 
   const handleLogin = () => {
-    // setLogin(false);
     window.location = `${SPOTIFY_AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token&show_dialog=true`;
   }
 
-  const [background, setBackground] = useState("url(/images/layered-waves-haikei.svg)")
-  const [bgRain, setbgRain] = useState("")
+  const [background, setBackground] = useState("url(/images/layered-waves-haikei.svg)"); 
+  const [bgRain, setbgRain] = useState(""); 
+  const [login, setLogin] = useState('');
 
   return (
     <div className={bgRain}>
       <div className="App" style={{ backgroundImage: background }}>
-      {localStorage.getItem("accessToken") ? <button onClick={handleLogin}>Connect With Spotify</button>: null}
+       <button className={login} onClick={handleLogin}>Connect With Spotify</button>
 
         <h1 id='header'>How Are You Feeling?</h1>
         <div className="mood-selectors-container">
           <div className="mood-selectors">
-            <Moods updateBackground={background => setBackground(background)} addRain={bgRain => setbgRain(bgRain)} />
+            <Moods removeSpotifyBtn={login => setLogin(login)} updateBackground={background => setBackground(background)} addRain={bgRain => setbgRain(bgRain)} />
           </div>
         </div>
       </div>
