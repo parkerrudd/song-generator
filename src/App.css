@@ -1,49 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Latin&family=Kanit:wght@100&display=swap"); 
+
 * {
   margin: 0; 
   padding: 0; 
   box-sizing: border-box;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family: 'Kanit', sans-serif;
+  font-weight: 1000;
+}
+.rain {
+  background-image: url("/public/images/rain-png-transparent-9.png");
+  height: 100vh; 
+  background-size: cover;
+  animation: rain .2s infinite; 
+  opacity: 1;
+}
+
+@keyframes rain {
+  to {
+    background-position: 0 0;
+  }
+  from {
+    background-position: 20% 100%;
+  }
 }
 
 .App {
   min-height: 100vh;
-  background-color: #059FCB;
+  /* background-color: #059FCB; */
+  /* background-image: ; */
+  opacity: .95;
+  transition: .7s;
   padding: .5em;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* background-image: url("/public/images/layered-waves-haikei.svg"); */
 }
+
+/* 
+.big-container {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
 
 #header {
   text-align: center;
+  color: #fff;
 }
 
-.mood-selectors-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2em;
-}
-
-.mood-selectors {
+.container {
   display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 1.5em;
-  border: 1px solid black;
-  padding: 2em 2em;
-  border-radius: 100px;
+  grid-template-columns: repeat(3, 1fr);
   background-color: rgba(2.4, 23.9, 29.8, 0.5);
-  color: #fff; 
+  border-radius: 50px;
+  padding: 1em 1em;
+  gap: 1.5em;
   box-shadow: 2px 5px 9px 1px #302f2f;
+  color: white;
+  margin-top: 1em;
+  width: 570px;
+}
+
+@media screen and (max-width: 440px) {
+  .container {
+    margin-left: 1.7em;
+  }
 }
 
 .mood-selector {
-  padding-left: 1em;
+  max-width: 100%;
+}
+
+.mood-btns {
+  display: block;
+  width: 7em;
+  padding: .5em;
+  font-size: 1.2em;;
+ 
+}
+
+.mood-btns:hover {
+  background-color: #185465;
+}
+
+.clicked {
+  background-color: #185465; 
+  width: 7em;
+  font-size: 1.2em;
+  padding: .5em;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    max-width: 85vw; 
+    margin-left: 1em;
+  }
+
+  .mood-btns {
+    font-size: 3.5vw;
+    max-width: 20vw;
+  }
+
+  .clicked {
+    max-width: 20vw; 
+    font-size: 3.5vw;
+  }
+
 }
 
 .btn {
-  padding-top: 1em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;  
-  padding-top: 2em;
 }
 
 button {
@@ -60,14 +135,53 @@ button:hover {
   background-color: #185465; 
 }
 
+#spotify-btn {
+  font-size: 2em;
+}
+
+.btn-hide {
+  display: none;
+}
+
+.added-items {
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hyperlink {
+  border-radius: 3px;
+  border: none;
+  height: 290px;
+  max-width: 75vw;
+  box-shadow: 2px 2px 15px 2px #444343;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@media screen and (max-width: 400px) {
+  .hyperlink {
+    max-width: 70vw;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .song-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 3em;
+  margin: 2em;
   gap: .3em;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 img {
