@@ -29,7 +29,7 @@
   /* background-color: #059FCB; */
   /* background-image: ; */
   opacity: .95;
-  transition: 1s;
+  transition: .7s;
   padding: .5em;
   display: flex; 
   flex-direction: column;
