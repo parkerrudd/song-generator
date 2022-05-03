@@ -26,8 +26,6 @@
 
 .App {
   min-height: 100vh;
-  /* background-color: #059FCB; */
-  /* background-image: ; */
   opacity: .95;
   transition: background-image 1s;
   padding: .5em;
@@ -38,16 +36,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* background-image: url("/public/images/layered-waves-haikei.svg"); */
 }
-
-/* 
-.big-container {
-  display: flex; 
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
 
 #header {
   text-align: center;
