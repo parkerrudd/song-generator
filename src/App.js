@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Moods from './moods';
+import sadImage from './images/sad-waves-haikei.svg'; 
 
 const CLIENT_ID = "fc084ca6b2d441beac484e68d5bdcf53";
 const SPOTIFY_AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
