@@ -6,8 +6,6 @@ import ChillSongs from "./chillSongs";
 import HopefulSongs from "./hopefulSongs";
 import NostalgicSongs from './nostalgicSongs'; 
 import RomanticSongs from "./romanticSongs";
-import SadBG from './images/sad-waves-haikei.svg'; 
-// import axios from "axios";
 
 function Moods(props) {
 
@@ -167,7 +165,7 @@ function Moods(props) {
                     <button onClick={() => {handleGetPlaylist(HAPPY_PLAYLIST); happyButtonClick(); props.updateBackground("url(/images/layered-waves-haikei.svg)"); props.addRain("")}} className={happyIsClicked ? 'clicked' : "mood-btns"}  id="happy">Happy</button>
                 </div>
                 <div className="mood-selector">
-                    <button onClick={() => {handleGetPlaylist(SAD_PLAYLIST); sadButtonClick(); props.updateBackground(SadBG); props.addRain("rain")}} className={sadIsClicked ? 'clicked' : "mood-btns"} id="sad">Sad</button>
+                    <button onClick={() => {handleGetPlaylist(SAD_PLAYLIST); sadButtonClick(); props.updateBackground("url(/images/sad-waves-haikei.svg)"); props.addRain("rain")}} className={sadIsClicked ? 'clicked' : "mood-btns"} id="sad">Sad</button>
                 </div>
                 <div className="mood-selector">
                     <button onClick={() => {handleGetPlaylist(CHILL_PLAYLIST); chillButtonClick(); props.updateBackground("url(/images/chill-waves-haikei.svg)"); props.addRain("") }} className={chillIsClicked ? 'clicked' : "mood-btns"}  id="chill">Chill</button>
