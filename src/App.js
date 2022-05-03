@@ -28,13 +28,13 @@ function App() {
   useEffect(() => {
     if (window.location.hash) {
       const { access_token, expires_in, token_type } = getReturnedParamsFromSpotify(window.location.hash);
-
+      console.log('hello'); 
       localStorage.clear();
       localStorage.setItem("accessToken", access_token);
       localStorage.setItem("tokenType", token_type);
       localStorage.setItem("expiresIn", expires_in);
     }
-  }, [window.location]);
+  }, []);
 
   useEffect(() => {
     if (window.location.href.indexOf('access_token') > -1) {
