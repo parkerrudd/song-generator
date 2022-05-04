@@ -5,9 +5,6 @@ import Moods from './moods';
 const CLIENT_ID = "fc084ca6b2d441beac484e68d5bdcf53";
 const SPOTIFY_AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const REDIRECT_URI = "https://www.findmeasong.com/";
-const SPACE_DELIMITER = "%20";
-const SCOPES = ["playlist-read-public", "user-read-currently-playing", "user-read-playback-state"];
-const SCOPES_URL_PARAMS = SCOPES.join(SPACE_DELIMITER);
 
 const getReturnedParamsFromSpotify = (hash) => {
   const stringAfterHash = hash.substring(1);
