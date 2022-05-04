@@ -33,8 +33,14 @@ function App() {
       localStorage.setItem("tokenType", token_type);
       localStorage.setItem("expiresIn", expires_in);
     }
-    window.location.reload(); 
   }, []);
+
+  window.onload = () => {
+    if(!window.location.hash) {
+      window.location = window.location + '#loaded';
+      window.location.reload();
+  }
+  }
 
   useEffect(() => {
     if (window.location.href.indexOf('access_token') > -1) {
