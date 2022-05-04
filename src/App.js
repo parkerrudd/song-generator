@@ -25,7 +25,7 @@ const getReturnedParamsFromSpotify = (hash) => {
 function App() {
 
   useEffect(() => {
-    if (window.location.hash) {
+    if (window.location.href.indexOf('access_token') {
       const { access_token, expires_in, token_type } = getReturnedParamsFromSpotify(window.location.hash);
       console.log('hello'); 
       localStorage.clear();
