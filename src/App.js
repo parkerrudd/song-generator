@@ -35,13 +35,6 @@ function App() {
     }
   }, []);
 
-  window.onload = () => {
-    if(!window.location.hash) {
-      window.location = window.location + '#loaded';
-      window.location.reload();
-  }
-  }
-
   useEffect(() => {
     if (window.location.href.indexOf('access_token') > -1) {
       setLogin("btn-hide"); 
