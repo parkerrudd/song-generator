@@ -32,8 +32,8 @@ function App() {
       localStorage.setItem("accessToken", access_token);
       localStorage.setItem("tokenType", token_type);
       localStorage.setItem("expiresIn", expires_in);
-      window.location.reload(); 
     }
+    window.location.reload(); 
   }, []);
 
   useEffect(() => {
